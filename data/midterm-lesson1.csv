@@ -1,0 +1,51 @@
+﻿level,topic,prompt,pinyin,option_a,option_b,option_c,option_d,answer,explain
+easy,Vocabulary,大家,dàjiā,Everyone,Friend,Water,Tea,A,大家 = everyone / all of you.
+easy,Vocabulary,朋友,péngyǒu,Everyone,Friend,Fruit,Pearl,B,朋友 = friend.
+easy,Vocabulary,愛,ài,Eat,Drink,Love,Thank,C,愛 = to love.
+easy,Vocabulary,吃,chī,Drink,Love,Say,Eat,D,吃 = to eat.
+easy,Vocabulary,喝,hē,Drink,Eat,Love,Go,A,喝 = to drink.
+easy,Food & Drink,水果,shuǐguǒ,Water,Fruit,Tea,Milk tea,B,水果 = fruit.
+easy,Food & Drink,水,shuǐ,Tea,Fruit,Water,Pearl,C,水 = water.
+easy,Food & Drink,茶,chá,Water,Milk,Fruit,Tea,D,茶 = tea.
+easy,Food & Drink,奶茶,nǎichá,Milk tea,Tea,Water,Fruit,A,奶 (milk) + 茶 (tea) = milk tea.
+easy,Food & Drink,珍珠,zhēnzhū,Fruit,Pearl (tapioca pearl),Tea,Milk,B,"珍珠 = pearl, the chewy balls in bubble tea."
+easy,Greetings,謝謝,xièxie,You're welcome,Good morning,Thank you,Good night,C,謝謝 = thank you.
+easy,Greetings,不客氣,bú kèqi,Thank you,Sorry,Goodbye,You're welcome,D,不客氣 = you are welcome.
+easy,Greetings,早安,zǎo’ān,Good morning,Good afternoon,Good night,Thank you,A,早 = early/morning.
+easy,Greetings,午安,wǔ’ān,Good morning,Good afternoon,Good night,Hello,B,午 = noon/afternoon.
+easy,Greetings,晚安,wǎn’ān,Good morning,Good afternoon,Good night,You're welcome,C,晚 = evening/night.
+easy,Characters,How do you write “tea”?,chá,水,喝,吃,茶,D,茶 = tea.
+easy,Characters,How do you write “to eat”?,chī,吃,喝,愛,果,A,"吃 = to eat, 喝 = to drink."
+easy,Characters,How do you write “water”?,shuǐ,茶,水,果,奶,B,水 = water.
+easy,Pinyin & Tones,朋友,,dàjiā,shuǐguǒ,péngyǒu,nǎichá,C,朋友 = péngyǒu.
+easy,Pinyin & Tones,晚安,,zǎo’ān,wǔ’ān,xièxie,wǎn’ān,D,晚安 = wǎn’ān.
+medium,Pinyin & Tones,Which is the correct pinyin for 喝 (to drink)?,,hē,hé,hě,hè,A,喝 is first tone: hē.
+medium,Pinyin & Tones,Which is the correct pinyin for 茶 (tea)?,,chā,chá,chǎ,chà,B,茶 is second tone: chá.
+medium,Pinyin & Tones,Which is the correct pinyin for 水 (water)?,,shuī,shuí,shuǐ,shuì,C,水 is third tone: shuǐ.
+medium,Pinyin & Tones,Which is the correct pinyin for 愛 (love)?,,āi,ái,ǎi,ài,D,愛 is fourth tone: ài.
+medium,Greetings,In the morning you meet your teacher. You say:,,早安,午安,晚安,不客氣,A,Morning greeting = 早安.
+medium,Greetings,Before going to bed you say:,,早安,晚安,午安,謝謝,B,Bedtime = 晚安.
+medium,Greetings,Your friend says 「謝謝」. You reply:,,謝謝,晚安,不客氣,早安,C,Reply to thanks = 不客氣.
+medium,Greetings,At 1 PM you greet your classmates:,,早安,晚安,不客氣,午安,D,Afternoon = 午安.
+medium,Food & Drink,我吃___。 (I eat ___.),wǒ chī ___,水果,水,茶,奶茶,A,"We 吃 fruit, but we 喝 water, tea and milk tea."
+medium,Food & Drink,我___奶茶。 (I love milk tea.),wǒ ___ nǎichá,茶,愛,水果,朋友,B,愛 = love.
+medium,Vocabulary,Which one is NOT a drink?,,水,茶,朋友,奶茶,C,朋友 means friend.
+medium,Vocabulary,Which one is NOT a greeting?,,早安,午安,晚安,水果,D,水果 means fruit.
+medium,Self-introduction,自我介紹,zìwǒ jièshào,Self-introduction,Thank you,Good morning,Everyone,A,自我介紹 = introduce yourself.
+medium,Characters,Which one is the correct word for “friend”?,péngyǒu,明友,朋友,月友,朋反,B,朋友 has two parts: 朋 and 友.
+medium,Characters,Which one is the correct word for “milk tea”?,nǎichá,水茶,奶水,奶茶,茶奶,C,"奶 (milk) first, then 茶 (tea)."
+medium,Characters,Which one is the correct word for “fruit”?,shuǐguǒ,水東,木果,小果,水果,D,水果 = 水 + 果.
+medium,Vocabulary,Which word means “everyone”?,dàjiā,大家,朋友,自我介紹,水果,A,大家 = everyone.
+medium,Pinyin & Tones,Which is the correct pinyin for 珍珠 (pearl)?,,zhēnzhù,zhēnzhū,zhénzhū,zhěnzhū,B,Both syllables are first tone.
+hard,Sentences,大家好，我愛吃水果。,"dàjiā hǎo, wǒ ài chī shuǐguǒ","Hello friend, I love fruit tea.","Goodbye everyone, I eat fruit.","Hello everyone, I love eating fruit.","Hello everyone, I drink water.",C,大家好 = hello everyone; 愛吃 = love to eat.
+hard,Sentences,我愛喝奶茶。,wǒ ài hē nǎichá,I love eating milk tea.,My friend loves milk tea.,I do not drink milk tea.,I love drinking milk tea.,D,愛喝 = love to drink.
+hard,Sentences,朋友喝水，我喝茶。,"péngyǒu hē shuǐ, wǒ hē chá",My friend drinks water; I drink tea.,My friend drinks tea; I drink water.,My friend eats fruit; I drink tea.,Everyone drinks water and tea.,A,Read the subject of each part carefully.
+hard,Sentences,Put the words in order: 愛 / 我 / 吃 / 水果,,我吃愛水果。,我愛吃水果。,吃我水果愛。,水果吃愛我。,B,Subject + 愛 + verb + object.
+hard,Greetings,Your friend gives you a bubble tea. Which exchange is correct?,,不客氣！／謝謝！,晚安！／午安！,謝謝！／不客氣！,早安！／不客氣！,C,The person who receives says 謝謝 first.
+hard,Sentences,Which sentence uses 喝 correctly?,,我喝水果。,我喝大家。,我喝朋友。,我喝奶茶。,D,喝 is used for drinks.
+hard,Sentences,Which sentence uses 吃 correctly?,,我吃水果。,我吃水。,我吃茶。,我吃喝。,A,"吃 is used for food, not water or tea."
+hard,Greetings,Which pair is matched correctly?,,早安 – Good night,午安 – Good afternoon,晚安 – Good morning,午安 – Good morning,B,"早 = morning, 午 = afternoon, 晚 = night."
+hard,Self-introduction,When do you say 「大家好」?,,Thanking a friend,Saying good night,Greeting a group of people,Ordering a drink,C,大家 = everyone.
+hard,Pinyin & Tones,Which is the correct pinyin for 我愛喝奶茶?,,wǒ ài chī nǎichá,wǒ ài hē shuǐ,wǒ hē ài nǎichá,wǒ ài hē nǎichá,D,Match each character with its pinyin.
+hard,Sentences,Translate into Chinese: “My friend loves milk tea.”,,朋友愛喝奶茶。,朋友喝愛奶茶。,愛朋友喝奶茶。,奶茶愛喝朋友。,A,Subject + 愛 + 喝 + drink.
+hard,Sentences,大家午安！,dàjiā wǔ’ān,"Good night, everyone!","Good afternoon, everyone!","Thank you, everyone!","Good morning, friends!",B,大家 + 午安.

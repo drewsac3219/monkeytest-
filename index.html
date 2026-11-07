@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#FFE98F">
+<title>Monkey Mandarin Test</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-time="day">
+
+<div id="stickerLayer"></div>
+<div id="srSay" class="sr" role="status" aria-live="polite"></div>
+<div id="dropOverlay" class="overlay" hidden><div><span>🍌</span><b>Drop it anywhere!</b><small>PDF, Word, PowerPoint, Excel, photos, text, zip…</small></div></div>
+<div id="toast" class="toast" role="status" hidden></div>
+
+<header class="topbar">
+  <span class="brand">🐵 <b>Monkey Mandarin</b></span>
+  <span class="spacer"></span>
+  <span id="storeChip" class="chip-mini" title="Everything is saved on this device only" hidden>💾 <span id="storeTxt"></span></span>
+  <button id="voiceBtn" class="icon-btn" aria-pressed="false" title="Let the stickers speak Mandarin out loud">🔈<span class="sr"> Voices</span></button>
+</header>
+
+<main>
+  <!-- ================= HOME ================= -->
+  <section id="home" class="screen">
+
+    <div class="hero">
+      <img class="hero-img" src="assets/stickers/group.png" alt="Two monkeys hugging with their friends">
+      <p class="kicker"><span id="hiEmoji">🌞</span> <span id="hiTime">Hello</span></p>
+      <h1 id="hiName">Ate</h1>
+      <p class="zh-greet"><span id="hiZh" lang="zh-CN">你好</span> <i id="hiPy">nǐ hǎo</i> <button id="hiSay" class="mini" aria-label="Hear it">🔊</button></p>
+      <div class="pills"><span id="sincePill" class="pill-soft" hidden></span></div>
+      <blockquote class="note"><span id="noteTxt"></span><cite id="noteFrom"></cite></blockquote>
+    </div>
+
+    <!-- IMPORT FIRST -->
+    <div id="drop" class="drop" tabindex="0" role="button" aria-label="Choose files to make a test from">
+      <div class="drop-ico">📥</div>
+      <h2>Drop any file here</h2>
+      <p class="sub">I’ll read it and build a test from it.</p>
+      <p class="types"><span>PDF</span><span>Word</span><span>PowerPoint</span><span>Excel</span><span>CSV</span><span>Photos</span><span>Text</span><span>Zip</span></p>
+      <div class="row center">
+        <button id="pickBtn" class="btn" type="button">Choose files</button>
+        <button id="scanBtn" class="btn ghost" type="button">📷 Scan a page</button>
+      </div>
+      <input id="file" type="file" multiple hidden>
+      <input id="scan" type="file" accept="image/*" capture="environment" hidden>
+    </div>
+
+    <div id="prog" class="card prog" hidden>
+      <div class="prog-top"><span class="spin" aria-hidden="true">🐒</span><b id="progName"></b></div>
+      <div class="bar"><i id="progFill"></i></div>
+      <p id="progLabel" class="sub" role="status"></p>
+      <div id="progLog" class="log"></div>
+    </div>
+
+    <div id="importOk" class="card ok-card" hidden>
+      <b id="okTitle"></b>
+      <p id="okSub" class="sub"></p>
+      <div class="row"><button id="okStart" class="btn big" type="button">Start a test now 🐵</button></div>
+    </div>
+
+    <div id="stats" class="stats"></div>
+
+    <details class="card slim" id="aiBoxCard">
+      <summary>Photos of notes / modules → AI test 📷</summary>
+      <p class="sub">Choose up to <b>10 photos</b> at once. The AI reads them (even handwriting), shows the words it found so you can fix mistakes, then builds the test.</p>
+      <input id="photos" type="file" accept="image/*" multiple>
+      <div id="thumbs" class="thumbs"></div>
+      <button id="aiGo" class="btn small" type="button" disabled>Read my photos</button>
+      <p id="aiMsg" class="msg" role="status"></p>
+      <div id="aiBox" hidden>
+        <label class="field">Words found (edit anything it misread)
+          <textarea id="aiReview" rows="10" spellcheck="false"></textarea></label>
+        <button id="aiBuild" class="btn big" type="button">Build test 🐵</button>
+      </div>
+      <details><summary class="small">AI settings</summary>
+        <label class="field">Anthropic API key (kept only in this browser)
+          <input id="apiKey" type="password" placeholder="sk-ant-..." autocomplete="off"></label>
+        <button id="saveKey" class="btn small ghost" type="button">Save key</button>
+      </details>
+    </details>
+
+    <details class="card slim">
+      <summary>Paste text instead ✍️</summary>
+      <textarea id="paste" rows="4" placeholder="Paste a word list, lesson notes, or a quiz here…"></textarea>
+      <div class="row"><button id="importPaste" class="btn small" type="button">Make a test from this</button></div>
+    </details>
+
+    <!-- BUILD A TEST -->
+    <div class="card" id="builder">
+      <h2>Make my test</h2>
+      <p class="sub" id="bankLine"></p>
+      <div class="field">Difficulty - you pick! <div id="levels" class="levels"></div></div>
+      <div class="field">Topics <div id="topics" class="chips"></div></div>
+      <div class="field">How many questions?
+        <div class="count-row">
+          <input id="count" type="number" min="1" value="10" inputmode="numeric" aria-label="Number of questions">
+          <div class="chips" id="presets"></div>
+        </div>
+        <small id="avail"></small>
+      </div>
+      <button id="start" class="btn big" type="button">Start test 🐵</button>
+      <p id="homeMsg" class="msg" role="status"></p>
+    </div>
+
+    <!-- LIBRARY -->
+    <div class="card" id="library">
+      <h2>My coverages</h2>
+      <div id="libList" class="lib"></div>
+      <p class="sub" id="libFoot"></p>
+    </div>
+
+    <!-- TODAY -->
+    <div class="card today" id="today">
+      <h2>Today 🍌</h2>
+      <div id="wotd" class="wotd"></div>
+      <button id="mistakes" class="btn ghost" type="button" hidden>Practice what I missed</button>
+    </div>
+
+    <details class="card slim" id="histBox">
+      <summary>Past results 📒</summary>
+      <div id="history"></div>
+      <div class="row">
+        <button id="expAll" class="btn small ghost" type="button">Export all (JSON)</button>
+        <button id="clearAll" class="btn small ghost" type="button">Clear</button>
+      </div>
+    </details>
+
+    <details class="card slim">
+      <summary>Question-file templates 🧩</summary>
+      <p class="sub">You can also write your own questions. Download a template, fill it in, and drop it back in.</p>
+      <div class="row"><button id="tplCsv" class="btn small ghost" type="button">CSV template</button><button id="tplJson" class="btn small ghost" type="button">JSON template</button></div>
+    </details>
+  </section>
+
+  <!-- ================= QUIZ ================= -->
+  <section id="quiz" class="screen" hidden>
+    <div class="card">
+      <button id="backHome" class="btn small ghost back" type="button" aria-label="Back to the main page">← Back</button>
+      <div class="top"><span id="qCount"></span><span id="streakPill" class="pill fire" hidden></span><span id="qLevel" class="pill"></span></div>
+      <div class="bar knob"><i id="barFill"></i></div>
+      <p id="qTopic" class="topic"></p>
+      <h2 id="qPrompt" class="prompt"></h2>
+      <p id="qPinyin" class="pinyin"></p>
+      <div class="row">
+        <button id="say" class="btn small ghost" type="button" hidden>🔊 Listen</button>
+        <button id="hint" class="btn small ghost" type="button">💡 Ask a friend</button>
+      </div>
+      <div id="opts" class="opts"></div>
+      <div id="fb" class="fb" role="status"></div>
+      <button id="next" class="btn big" type="button" hidden>Next</button>
+    </div>
+  </section>
+
+  <!-- ================= RESULT ================= -->
+  <section id="result" class="screen" hidden>
+    <div class="card center">
+      <img class="hero-img small" src="assets/stickers/group.png" alt="">
+      <h2 id="rName"></h2>
+      <div id="rRing" class="ring"><span id="rScore"></span></div>
+      <p id="rPts" class="sub"></p>
+      <p id="rEst" class="est"></p>
+      <p id="rLove" class="love" hidden></p>
+      <h3>By level</h3><div id="rLevels" class="bars"></div>
+      <h3>By topic</h3><div id="rTopics" class="bars"></div>
+      <h3>Review</h3><div id="rReview" class="review"></div>
+      <button id="nextLvl" class="btn big" type="button" hidden></button>
+      <button id="rMistakes" class="btn big" type="button" hidden>Practice what I missed</button>
+      <div class="row center">
+        <button id="expJson" class="btn small ghost" type="button">Download JSON</button>
+        <button id="expCsv" class="btn small ghost" type="button">Download CSV</button>
+      </div>
+      <button id="again" class="btn big" type="button">Back home 🏠</button>
+      <p class="sub">Saved on this device ✔</p>
+    </div>
+  </section>
+</main>
+
+<script src="data/her.js"></script>
+<script src="data/questions.js"></script>
+<script src="js/db.js"></script>
+<script src="js/extract.js"></script>
+<script src="js/generate.js"></script>
+<script src="js/stickers.js"></script>
+<script src="js/coverage.js"></script>
+<script src="js/app.js"></script>
+<script src="js/scan.js"></script>
+</body>
+</html>

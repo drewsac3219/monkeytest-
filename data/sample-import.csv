@@ -1,0 +1,4 @@
+level,topic,prompt,pinyin,option_a,option_b,option_c,option_d,answer,explain
+easy,Fruit,香蕉,xiāngjiāo,Banana,Apple,Grape,Pear,A,香蕉 = banana
+medium,Weather,今天很热。,jīntiān hěn rè,It is cold today.,It is hot today.,It is raining.,It is windy.,B,热 = hot
+hard,Grammar,他一边走路一边听音乐。,tā yìbiān zǒulù yìbiān tīng yīnyuè,He walks while listening to music.,He likes walking.,He listens after walking.,He is lost.,A,一边…一边 = doing two things at once
